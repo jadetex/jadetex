@@ -17,5 +17,8 @@ XMLDECL=/usr/share/sgml/xml.dcl
 	fi
 	rm -f prior.aux
 
+%.html: %.xml %.dsl
+	$(JADE) -v -t sgml -i html -V nochunks -V rootchunk -d $*.dsl#html $(XMLDECL) $*.xml
+   
 clean:
 	-rm -f *.out *.aux *.log *.dvi *.tex

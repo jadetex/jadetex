@@ -24,6 +24,15 @@
 <style-specification-body> 
 
 ;; customize the html stylesheet
+(define %root-filename%
+  ;; Name for the root HTML document
+  "releasenotes" )
+(define %html-ext% ".html")
+(define %body-attr%
+  ;; What attributes should be hung off of BODY?
+  (list
+     (list "BGCOLOR" "#FFFFFF")
+     (list "TEXT" "#000000")))
 
 </style-specification-body>
 </style-specification>

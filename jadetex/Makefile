@@ -1,4 +1,4 @@
-default: jadetex.fmt pdfjadetex.fmt 
+default: basic
 
 basic: jadetex.ltx
 	tex jadetex.ins

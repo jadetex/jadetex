@@ -56,7 +56,7 @@
 \end{document}
 %</driver>
 % \fi
-% \CheckSum{4397}
+% \CheckSum{4403}
 % \StopEventually{}
 %
 % \section{Introduction}
@@ -97,7 +97,7 @@
 %<*package>
 \def\JadeTeXMajorVersion{3}
 \def\JadeTeXMinorVersion{8}
-\def\JadeTeXDate{2001/07/02}
+\def\JadeTeXDate{2001/07/11}
 \documentclass{minimal}
 \RequirePackage{array}[1995/01/01]
 \RequirePackage{longtable}[1995/01/01]
@@ -408,6 +408,8 @@
       \expandafter\@alph#1}
  \expandafter\def\csname PageNumbering@A\endcsname#1{%
       \expandafter\@Alph#1}
+ \expandafter\def\csname PageNumbering@0\endcsname#1{% this shouldn't happen
+      \expandafter\@arabic#1}
  \expandafter\def\csname PageNumbering@\endcsname#1{%
       \expandafter\@arabic#1}
 \def\PageBalanceColumns{0}
@@ -538,13 +540,13 @@
 \def\Pageref#1{\expandafter\@Setref\csname p@#1\endcsname{#1}}
 \def\@Setref#1#2{%
   \ifx#1\relax
-   \immediate\write\@mainaux{\string\pagelabel{#2}{-999}}%
+   \immediate\write\@mainaux{\string\pagelabel{#2}{qqq}}%
    \protect\G@refundefinedtrue
    \nfss@text{\reset@font\bfseries ??}%
    \@latex@warning{Reference `#2' on page \thepage \space
              undefined}%
   \else
-   \ifnum#1<0
+   \if#1{qqq}
     \protect\G@refundefinedtrue
     \nfss@text{\reset@font\bfseries ??}%
     \@latex@warning{Reference `#2' on page \thepage \space undefined}%
@@ -2021,7 +2023,7 @@
   \ifx\LastSpacePriority\@force
    \advance\CurrentSpaceMin by \LastSpaceMin
    \advance\CurrentSpaceNom by \LastSpaceNom
-   \advance\CurrentSpaceMin by \LastSpaceMax
+   \advance\CurrentSpaceMax by \LastSpaceMax
   \fi
 \else
   \ifx\LastSpacePriority\@force

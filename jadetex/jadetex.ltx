@@ -9,8 +9,8 @@
 \NeedsTeXFormat{LaTeX2e}[1995/06/01]
 \ProvidesFile{jadetex.ltx}
 \def\JadeTeXMajorVersion{3}
-\def\JadeTeXMinorVersion{9}
-\def\JadeTeXDate{2001/07/11}
+\def\JadeTeXMinorVersion{10}
+\def\JadeTeXDate{2001/07/13}
 \documentclass{minimal}
 \RequirePackage{array}[1995/01/01]
 \RequirePackage{longtable}[1995/01/01]
@@ -426,6 +426,7 @@
          {\string\pagelabel{#1}{\thepage}}\@esphack}
 \def\pagelabel#1#2{\global\@namedef{p@#1}{#2}}
 \def\Pageref#1{\expandafter\@Setref\csname p@#1\endcsname{#1}}
+\def\@qqq{qqq}
 \def\@Setref#1#2{%
   \ifx#1\relax
    \immediate\write\@mainaux{\string\pagelabel{#2}{qqq}}%
@@ -434,7 +435,7 @@
    \@latex@warning{Reference `#2' on page \thepage \space
              undefined}%
   \else
-   \if#1{qqq}
+   \ifx#1\@qqq
     \protect\G@refundefinedtrue
     \nfss@text{\reset@font\bfseries ??}%
     \@latex@warning{Reference `#2' on page \thepage \space undefined}%

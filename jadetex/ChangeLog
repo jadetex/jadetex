@@ -1,3 +1,8 @@
+2001-07-13  Sebastian Rahtz  <sebastian.rahtz@computing-services.oxford.ac.uk>
+	* jadetex.dtx: version 3.9
+	* jadetex.dtx: changed \if#1{qqq} to \ifx#1\@qqq, stupid mistake
+	by me
+
 2001-07-11  Sebastian Rahtz  <sebastian.rahtz@computing-services.oxford.ac.uk>
 	* jadetex.dtx: version 3.9
 	* jadetex.dtx: undefined page labels now "qqq" instead of -999,

@@ -22,3 +22,6 @@ XMLDECL=/usr/share/sgml/xml.dcl
    
 clean:
 	-rm -f *.out *.aux *.log *.dvi *.tex
+
+realclean: clean
+	-rm -f *.html *.pdf

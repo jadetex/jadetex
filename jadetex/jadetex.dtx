@@ -1086,7 +1086,8 @@
        \ifnum\PageBalanceColumns>0
          \end{multicols}
        \else
-         \end{multicols*}
+         % \endmulticols*
+         \vfill\end{multicols}
        \fi
      \fi
    % or delayed open
@@ -1096,7 +1097,10 @@
        \ifnum\PageBalanceColumns>0
          \begin{multicols}{\PageNColumns}
        \else
-         \begin{multicols*}{\PageNColumns}
+         % \begin{multicols*}{\PageNColumns}
+         \let\balance@columns@out
+           \multi@column@out
+         \begin{multicols}{\PageNColumns}
        \fi
      \fi
    \fi
@@ -1115,7 +1119,10 @@
        \ifnum\PageBalanceColumns>0
          \begin{multicols}{\PageNColumns}
        \else
-         \begin{multicols*}{\PageNColumns}
+         % \begin{multicols*}{\PageNColumns}
+         \let\balance@columns@out
+           \multi@column@out
+         \begin{multicols}{\PageNColumns}
        \fi
      \fi
    \fi
@@ -1132,7 +1139,8 @@
        \ifnum\PageBalanceColumns>0
          \end{multicols}
        \else
-         \end{multicols*}
+         % \endmulticols*
+         \vfill\end{multicols}
        \fi
      \fi
    \fi
@@ -1576,7 +1584,10 @@
     \ifnum\PageBalanceColumns>0
        \begin{multicols}{\PageNColumns}
     \else
-       \begin{multicols*}{\PageNColumns}
+       % begin\{multicols*}{\PageNColumns}
+       \let\balance@columns@out
+         \multi@column@out
+       \begin{multicols}{\PageNColumns}
     \fi
    \fi
  \fi
@@ -1738,7 +1749,8 @@
      \ifnum\PageBalanceColumns>0
        \end{multicols}
      \else
-       \end{multicols*}
+       % \endmulticols*
+       \vfill\end{multicols}
      \fi
    \fi
  \fi
@@ -2360,7 +2372,8 @@
     \ifnum\PageBalanceColumns>0
        \end{multicols}
     \else
-       \end{multicols*}
+       % \endmulticols*
+       \vfill\end{multicols}
     \fi
  \fi
  \enddocument}

@@ -1,5 +1,5 @@
 2001-07-11  Sebastian Rahtz  <sebastian.rahtz@computing-services.oxford.ac.uk>
-	* jadetex.dtx: version 3.8
+	* jadetex.dtx: version 3.9
 	* jadetex.dtx: undefined page labels now "qqq" instead of -999,
 	because pages can now be non-numeric (eg "ii"), and the \ifnum
 	test could not work (from Ian Castle

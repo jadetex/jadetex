@@ -56,7 +56,7 @@
 \end{document}
 %</driver>
 % \fi
-% \CheckSum{4395}
+% \CheckSum{4397}
 % \StopEventually{}
 %
 % \section{Introduction}
@@ -96,8 +96,8 @@
 %    \begin{macrocode}
 %<*package>
 \def\JadeTeXMajorVersion{3}
-\def\JadeTeXMinorVersion{7}
-\def\JadeTeXDate{2001/06/22}
+\def\JadeTeXMinorVersion{8}
+\def\JadeTeXDate{2001/07/02}
 \documentclass{minimal}
 \RequirePackage{array}[1995/01/01]
 \RequirePackage{longtable}[1995/01/01]
@@ -1608,6 +1608,9 @@
 % Look out for the canonical 1in margins in TeX systems!
 %    \begin{macrocode}
 \def\JadeSetPage{%
+ \ifnum\PageNumberRestart=1
+   \global\c@page \@ne
+ \fi
  \ifnum\PageTwoSide=0
    \global\@twosidefalse
  \else
@@ -1743,9 +1746,6 @@
    \fi
  \else
    \clearpage
- \fi
- \ifnum\PageNumberRestart=1
-   \global\c@page \@ne 
  \fi
  \fancyhf{}%
  \endDisplayNIC

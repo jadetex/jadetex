@@ -36,7 +36,8 @@ For a full list, see the change management records </head>
 <head>JadeTeX</head>
 <p>This is a TeX macro package for processing the output from
 	  Jade/OpenJade in TeX (-t) mode. You can download it
-from Sourceforge.</p>
+from Sourceforge; <xptr url="http://sourceforge.net/projects/jadetex/"/>.
+</p>
 </div>
 <div><head>Installation</head>
     <div>
@@ -421,7 +422,7 @@ make -f Makefile.jadetex</Screen>
                       2.Mailing list links (we'll create them in a second) 
                       3.A SourceForge icon and web counter - see the site documentation for this. 
                       4.A link to the CVS web interface at
-                         http://cvs.sourceforge.net/cgi-bin/cvsweb.cgi/?cvsroot=yourproject 
+                         
                       5.Some info about using CVS specific to your project. 
                       6.Setup mailing lists for your project. 
 -->

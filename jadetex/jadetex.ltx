@@ -9,8 +9,8 @@
 \NeedsTeXFormat{LaTeX2e}[1995/06/01]
 \ProvidesFile{jadetex.ltx}
 \def\JadeTeXMajorVersion{3}
-\def\JadeTeXMinorVersion{7}
-\def\JadeTeXDate{2001/06/22}
+\def\JadeTeXMinorVersion{8}
+\def\JadeTeXDate{2001/07/02}
 \documentclass{minimal}
 \RequirePackage{array}[1995/01/01]
 \RequirePackage{longtable}[1995/01/01]
@@ -622,6 +622,7 @@
     \DisplayNIC
     \@@par%
     \@tempdima\textwidth
+    \nointerlineskip
     \ifdim\EndIndent>\z@
       \advance\@tempdima by-\EndIndent
     \fi
@@ -738,6 +739,7 @@
     \ifx\DisplayAlignment\A@center\hfill\fi
     \ifx\DisplayAlignment\A@start\hfill\fi
     }%
+    \nointerlineskip
     \@@par%
   \else%
     \typeout{ERROR: invalid IsDisplay value of \IsDisplay}%
@@ -1222,6 +1224,9 @@
 \def\SideLine#1{#1}
 \def\endSideLine{}
 \def\JadeSetPage{%
+ \ifnum\PageNumberRestart=1
+   \global\c@page \@ne
+ \fi
  \ifnum\PageTwoSide=0
    \global\@twosidefalse
  \else
@@ -1333,9 +1338,6 @@
    \fi
  \else
    \clearpage
- \fi
- \ifnum\PageNumberRestart=1
-   \global\c@page \@ne
  \fi
  \fancyhf{}%
  \endDisplayNIC

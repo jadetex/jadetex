@@ -24,12 +24,12 @@
       <h2>Contents</h2>
       <ul class="toc">
          <li class="toc">1. <a class="toc" href="#index-div-d18e62">JadeTeX</a></li>
-         <li class="toc">2. <a class="toc" href="#index-div-d18e71">Installation</a><ul class="toc">
-               <li class="toc">2.1. <a class="toc" href="#index-div-d18e75">Introduction</a></li>
-               <li class="toc">2.2. <a class="toc" href="#index-div-d18e111">Increasing TeX capacities</a></li>
-               <li class="toc">2.3. <a class="toc" href="#index-div-d18e336">Creating the format files</a></li>
-               <li class="toc">2.4. <a class="toc" href="#index-div-d18e383">Testing the installation</a></li>
-               <li class="toc">2.5. <a class="toc" href="#index-div-d18e395">Frequently Asked Questions</a></li>
+         <li class="toc">2. <a class="toc" href="#index-div-d18e73">Installation</a><ul class="toc">
+               <li class="toc">2.1. <a class="toc" href="#index-div-d18e77">Introduction</a></li>
+               <li class="toc">2.2. <a class="toc" href="#index-div-d18e113">Increasing TeX capacities</a></li>
+               <li class="toc">2.3. <a class="toc" href="#index-div-d18e338">Creating the format files</a></li>
+               <li class="toc">2.4. <a class="toc" href="#index-div-d18e385">Testing the installation</a></li>
+               <li class="toc">2.5. <a class="toc" href="#index-div-d18e397">Frequently Asked Questions</a></li>
             </ul>
          </li>
       </ul>
@@ -41,23 +41,24 @@
          
          <p><a name="d18e67"></a>This is a TeX macro package for processing the output from
             	  Jade/OpenJade in TeX (-t) mode. You can download it
-            from Sourceforge.
+            from Sourceforge; <tt><a class="xptr" href="http://sourceforge.net/projects/jadetex/" target="_top">http://sourceforge.net/projects/jadetex/</a></tt>.
+            
          </p>
          
       </div>
       
       <div class="teidiv">
-         <h2><a name="index-div-d18e71"></a>2. Installation
+         <h2><a name="index-div-d18e73"></a>2. Installation
          </h2>
              
          <div class="teidiv">
-            <h3><a name="index-div-d18e75"></a>2.1. Introduction
+            <h3><a name="index-div-d18e77"></a>2.1. Introduction
             </h3>
                   
                   
             
                   
-            <p><a name="d18e80"></a>This documents is based on a note by FC describing his
+            <p><a name="d18e82"></a>This documents is based on a note by FC describing his
                	experience installing JadeTeX with OpenJade 1.3 and teTeX 1.06
                	(on Unix). It has since been expanded and checked by SR and
                	SP. It is aimed to people who have perhaps some experience
@@ -67,11 +68,11 @@
                	and consequently have a rough time with JadeTeX&#8230;
             </p>
             	
-            <p><a name="d18e83"></a>This document relates to JadeTeX version 2.11 or later.
+            <p><a name="d18e85"></a>This document relates to JadeTeX version 2.11 or later.
             </p>
             
                   
-            <p><a name="d18e86"></a>To use JadeTeX, you first of all should compile and install
+            <p><a name="d18e88"></a>To use JadeTeX, you first of all should compile and install
                	OpenJade. The  resulting openjade executable, used
                	with the <code class="Value">-t tex</code> flag, will format an
                	SGML/XML file and yield a TeX output file. Using
@@ -87,12 +88,12 @@
          
              
          <div class="teidiv">
-            <h3><a name="index-div-d18e111"></a>2.2. Increasing TeX capacities
+            <h3><a name="index-div-d18e113"></a>2.2. Increasing TeX capacities
             </h3>
                   
             
                   
-            <p><a name="d18e116"></a>The TeX output file uses a macro package, JadeTeX, built on
+            <p><a name="d18e118"></a>The TeX output file uses a macro package, JadeTeX, built on
                      top of LaTeX, just as LaTeX is a macro package sitting on top of
                      plain TeX. It is probably possible to just stick an
                      <code class="Input">\input</code> at the top of your
@@ -112,7 +113,7 @@
             </p>
             
                   
-            <p><a name="d18e137"></a>But, as ever, there are complications, relating to TeX's
+            <p><a name="d18e139"></a>But, as ever, there are complications, relating to TeX's
                	capacity restrictions. TeX is designed to use a fixed amount
                	of resources to process documents; for example, there is a
                	maximum number of strings that can be allocated, and a maximum
@@ -123,7 +124,7 @@
             </p>
             
                   
-            <p><a name="d18e140"></a>Fortunately, though, there is no need to recompile your TeX
+            <p><a name="d18e142"></a>Fortunately, though, there is no need to recompile your TeX
                	binary. If you are using teTeX (or any other Web2c-based
                	distribution) there will be a file called
                	<code class="Filespec">texmf.cnf</code> in your installation which sets
@@ -133,7 +134,7 @@
             </p>
             
                   
-            <p><a name="d18e146"></a>Where is <code class="Filespec">texmf.cnf</code>? You can find it in the
+            <p><a name="d18e148"></a>Where is <code class="Filespec">texmf.cnf</code>? You can find it in the
                	<code class="Filespec">web2c</code> directory under
                	your <code class="Filespec">texmf</code> tree... which begs the question, where
                	is <code class="Filespec">texmf</code>? The most
@@ -148,23 +149,23 @@
             </p>
             
                   
-            <p><a name="d18e173"></a> If for some reason kpsewhich is not in your
+            <p><a name="d18e175"></a> If for some reason kpsewhich is not in your
                	<code class="Filespec">PATH</code>,
                	and you don't know where it is, here are some likely locations:
                	
                <ul>
-                  <li><a name="d18e183"></a><code class="Filespec">/usr/share/texmf</code></li>
-                  <li><a name="d18e187"></a><code class="Filespec">/usr/local/share/texmf</code></li>
-                  <li><a name="d18e191"></a><code class="Filespec">/usr/local/teTeX/texmf</code></li>
-                  <li><a name="d18e195"></a><code class="Filespec">/usr/local/lib/teTeX/texmf</code></li>
-                  <li><a name="d18e199"></a><code class="Filespec">/usr/local/lib/texmf</code></li>
-                  <li><a name="d18e203"></a><code class="Filespec">/usr/lib/texmf</code></li>
-                  <li><a name="d18e207"></a><code class="Filespec">/usr/lib/teTeX/texmf</code></li>
+                  <li><a name="d18e185"></a><code class="Filespec">/usr/share/texmf</code></li>
+                  <li><a name="d18e189"></a><code class="Filespec">/usr/local/share/texmf</code></li>
+                  <li><a name="d18e193"></a><code class="Filespec">/usr/local/teTeX/texmf</code></li>
+                  <li><a name="d18e197"></a><code class="Filespec">/usr/local/lib/teTeX/texmf</code></li>
+                  <li><a name="d18e201"></a><code class="Filespec">/usr/local/lib/texmf</code></li>
+                  <li><a name="d18e205"></a><code class="Filespec">/usr/lib/texmf</code></li>
+                  <li><a name="d18e209"></a><code class="Filespec">/usr/lib/teTeX/texmf</code></li>
                </ul>
             </p>
             
                   
-            <p><a name="d18e212"></a>In a minute we are going to modify <code class="Filespec">texmf.cnf</code> to
+            <p><a name="d18e214"></a>In a minute we are going to modify <code class="Filespec">texmf.cnf</code> to
                	increase the capacities, then build the JadeTeX format file and install
                	the JadeTeX executable(s). You may have a command
                        hugelatex, a version of latex with greater
@@ -179,7 +180,7 @@
             </p>
             
                   
-            <p><a name="d18e233"></a>First we need to update texmf.cnf to ensure that
+            <p><a name="d18e235"></a>First we need to update texmf.cnf to ensure that
                	latex really is
                	<em>huge</em>. Take a look at the top of the file. 
                It will probably say:
@@ -194,14 +195,14 @@
                      Live is already set up for JadeTeX</p>
             
             
-            <p><a name="d18e248"></a>
+            <p><a name="d18e250"></a>
                	If you have an `original',  follow those directions and delete the string
                	<code class="Input">original</code> to ensure that
                	future upgrades won't obliterate your changes.
             </p>
                   
                   
-            <p><a name="d18e254"></a>In the latter half of the file, you will find the capacity settings,
+            <p><a name="d18e256"></a>In the latter half of the file, you will find the capacity settings,
                	which look something like this:
                
                	<pre class="Program">pool_size = 125000
@@ -257,7 +258,7 @@ max_strings.pdfjadetex = 55000
                	Add these to the end of the file, or wherever makes you happy.</p>
                   
                   
-            <p><a name="d18e278"></a>Now let's build some format files. Under
+            <p><a name="d18e280"></a>Now let's build some format files. Under
                	<code class="Filespec">$TEXMFMAIN/tex/latex/config</code>,
                	you will find the files necessary to rebuild latex.
                	Copy them somewhere temporary and go there:
@@ -281,7 +282,7 @@ cd /tmp/config</pre>
                      </p>
             
                   
-            <p><a name="d18e308"></a>Now just create a symbolic link from tex to
+            <p><a name="d18e310"></a>Now just create a symbolic link from tex to
                	latex:
                
                	<pre class="Screen">ln -s /usr/bin/tex /usr/local/bin/latex</pre>
@@ -299,11 +300,11 @@ cd /tmp/config</pre>
          
              
          <div class="teidiv">
-            <h3><a name="index-div-d18e336"></a>2.3. Creating the format files
+            <h3><a name="index-div-d18e338"></a>2.3. Creating the format files
             </h3>
                   
                   
-            <p><a name="d18e341"></a>Next, take a look at your OpenJade distribution. Under the directory
+            <p><a name="d18e343"></a>Next, take a look at your OpenJade distribution. Under the directory
                	<code class="Filespec">dsssl</code> you will find the files necessary to build
                	jadetex and pdfjadetex, including a Makefile. Now become root and just do:
                
@@ -318,7 +319,7 @@ cd /tmp/config</pre>
                	<code class="Filespec">$TEXMFMAIN/tex/jadetex</code>.
             </p>
                   
-            <p><a name="d18e368"></a>All that's left to do is to create the links:
+            <p><a name="d18e370"></a>All that's left to do is to create the links:
                
                	<pre class="Screen">ln -s /usr/bin/tex /usr/bin/jadetex
 ln -s /usr/bin/pdftex /usr/bin/pdfjadetex</pre>
@@ -334,11 +335,11 @@ ln -s /usr/bin/pdftex /usr/bin/pdfjadetex</pre>
          
              
          <div class="teidiv">
-            <h3><a name="index-div-d18e383"></a>2.4. Testing the installation
+            <h3><a name="index-div-d18e385"></a>2.4. Testing the installation
             </h3>
                   
                   
-            <p><a name="d18e388"></a>Finally, test your installation using the demonstration files in
+            <p><a name="d18e390"></a>Finally, test your installation using the demonstration files in
                	that directory:
                
                	<pre class="Screen">openjade -t tex -d demo.dsl demo.sgm
@@ -351,7 +352,7 @@ pdfjadetex demo.tex</pre>
          
              
          <div class="teidiv">
-            <h3><a name="index-div-d18e395"></a>2.5. Frequently Asked Questions
+            <h3><a name="index-div-d18e397"></a>2.5. Frequently Asked Questions
             </h3>
                   
             
@@ -406,83 +407,83 @@ make -f Makefile.jadetex</pre>
                      	      output).
                      	    
                      <ul>
-                        <li><a name="d18e457"></a>Arial
+                        <li><a name="d18e459"></a>Arial
                         </li>
-                        <li><a name="d18e460"></a>Helvetica
+                        <li><a name="d18e462"></a>Helvetica
                         </li>
-                        <li><a name="d18e463"></a>Palatino
+                        <li><a name="d18e465"></a>Palatino
                         </li>
-                        <li><a name="d18e466"></a>Bookman
+                        <li><a name="d18e468"></a>Bookman
                         </li>
-                        <li><a name="d18e469"></a>Courier
+                        <li><a name="d18e471"></a>Courier
                         </li>
-                        <li><a name="d18e472"></a>Symbol
+                        <li><a name="d18e474"></a>Symbol
                         </li>
-                        <li><a name="d18e475"></a>Wingdings
+                        <li><a name="d18e477"></a>Wingdings
                         </li>
-                        <li><a name="d18e478"></a>WingDings
+                        <li><a name="d18e480"></a>WingDings
                         </li>
-                        <li><a name="d18e481"></a>LucidaSans
+                        <li><a name="d18e483"></a>LucidaSans
                         </li>
-                        <li><a name="d18e484"></a>LucidaBright
+                        <li><a name="d18e486"></a>LucidaBright
                         </li>
-                        <li><a name="d18e487"></a>Savoy
+                        <li><a name="d18e489"></a>Savoy
                         </li>
-                        <li><a name="d18e490"></a>ACaslon
+                        <li><a name="d18e492"></a>ACaslon
                         </li>
-                        <li><a name="d18e493"></a>Caslon
+                        <li><a name="d18e495"></a>Caslon
                         </li>
-                        <li><a name="d18e496"></a>Formata
+                        <li><a name="d18e498"></a>Formata
                         </li>
-                        <li><a name="d18e499"></a>FranklinGothic
+                        <li><a name="d18e501"></a>FranklinGothic
                         </li>
-                        <li><a name="d18e502"></a>OCRAbyBT
+                        <li><a name="d18e504"></a>OCRAbyBT
                         </li>
-                        <li><a name="d18e505"></a>AGaramond
+                        <li><a name="d18e507"></a>AGaramond
                         </li>
-                        <li><a name="d18e508"></a>Avant-Garde
+                        <li><a name="d18e510"></a>Avant-Garde
                         </li>
-                        <li><a name="d18e511"></a>Courier-New
+                        <li><a name="d18e513"></a>Courier-New
                         </li>
-                        <li><a name="d18e514"></a>New-Century-Schoolbook
+                        <li><a name="d18e516"></a>New-Century-Schoolbook
                         </li>
-                        <li><a name="d18e517"></a>Times-Roman
+                        <li><a name="d18e519"></a>Times-Roman
                         </li>
-                        <li><a name="d18e520"></a>Trade-Gothic
+                        <li><a name="d18e522"></a>Trade-Gothic
                         </li>
-                        <li><a name="d18e523"></a>Times-New-Roman
+                        <li><a name="d18e525"></a>Times-New-Roman
                         </li>
-                        <li><a name="d18e526"></a>Times-NR-MT
+                        <li><a name="d18e528"></a>Times-NR-MT
                         </li>
-                        <li><a name="d18e529"></a>Courier-New
+                        <li><a name="d18e531"></a>Courier-New
                         </li>
-                        <li><a name="d18e532"></a>Zapf-Dingbats
+                        <li><a name="d18e534"></a>Zapf-Dingbats
                         </li>
-                        <li><a name="d18e535"></a>Gill-Sans
+                        <li><a name="d18e537"></a>Gill-Sans
                         </li>
-                        <li><a name="d18e538"></a>iso-serif
+                        <li><a name="d18e540"></a>iso-serif
                         </li>
-                        <li><a name="d18e541"></a>iso-sanserif
+                        <li><a name="d18e543"></a>iso-sanserif
                         </li>
-                        <li><a name="d18e544"></a>iso-monocase
+                        <li><a name="d18e546"></a>iso-monocase
                         </li>
-                        <li><a name="d18e547"></a>LetterGothic12PitchBT
+                        <li><a name="d18e549"></a>LetterGothic12PitchBT
                         </li>
-                        <li><a name="d18e550"></a>Monospace821
+                        <li><a name="d18e552"></a>Monospace821
                         </li>
-                        <li><a name="d18e553"></a>OCRB10PitchBT
+                        <li><a name="d18e555"></a>OCRB10PitchBT
                         </li>
-                        <li><a name="d18e556"></a>OCR-A
+                        <li><a name="d18e558"></a>OCR-A
                         </li>
-                        <li><a name="d18e559"></a>OCR-B-10PitchBT
+                        <li><a name="d18e561"></a>OCR-B-10PitchBT
                         </li>
-                        <li><a name="d18e562"></a>Computer-Modern-Typewriter
+                        <li><a name="d18e564"></a>Computer-Modern-Typewriter
                         </li>
-                        <li><a name="d18e565"></a>Computer-Modern-Sans
+                        <li><a name="d18e567"></a>Computer-Modern-Sans
                         </li>
-                        <li><a name="d18e568"></a>Computer-Modern
+                        <li><a name="d18e570"></a>Computer-Modern
                         </li>
-                        <li><a name="d18e571"></a>Computer-Modern-Caps-And-Small-Caps
+                        <li><a name="d18e573"></a>Computer-Modern-Caps-And-Small-Caps
                         </li>
                      </ul>
                      	  
@@ -526,14 +527,10 @@ make -f Makefile.jadetex</pre>
           (revised July 2001)
           &nbsp;Author: Sebastian RahtzSimon PeppingFrank Christoph.
           <br>&copy; Sebastian Rahtz
-         <!--Generated 
- 
- using an XSLT version 1 stylesheet
- based on http://www.oucs.ox.ac.uk/stylesheets/teihtml.xsl
- processed using:
- `SAXON 6.3 from Michael Kay' 
-
--->
+         <!--
+Generated using an XSLT version 1 stylesheet
+based on http://www.oucs.ox.ac.uk/stylesheets/teihtml.xsl
+processed using SAXON 6.3 from Michael Kay-->
       </address>
    </body>
 </html>

@@ -1,0 +1,8 @@
+*.tex
+*.pdf
+*.rtf
+*.aux
+*.log
+*.html
+*.out
+jadetex.cfg

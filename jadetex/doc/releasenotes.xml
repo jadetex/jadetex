@@ -3,8 +3,8 @@
 ]>
 <book>
 <bookinfo>
-	<title>Release Notes 3.12</title>
-	<subtitle>JadeTeX</subtitle>
+	<title>JadeTeX 3.12</title>
+	<subtitle>Release Notes</subtitle>
 	<corpauthor>JadeTeX Development Team</corpauthor>
         <edition>Release 3.12</edition>
         <pubdate>January 2002</pubdate>
@@ -14,24 +14,119 @@
         </copyright>
 </bookinfo>
 
-<chapter><title>JadeTeX Release Notes</title>
+<chapter><title>JadeTeX 3.12 Release Notes</title>
 <para>JadeTeX is a companion package to the OpenJade DSSSL processor.
 OpenJade applies a DSSSL stylesheet to an SGML or XML document. The output
 of this process can be in a number of forms, including a set of high level
-LaTeX macros. It is the task of the jadetex package to transform these
-macros into DVI, PostScript or Portable Document Format (PDF) form.</para>
-<sect1><title>Dependancies</title>
-<para>Table of software dependencies</para>
-<para>Package... Minimum. Desired</para>
+LaTeX macros. It is the task of the JadeTeX package to transform these
+macros into DVI/PostScript (use the command <command>jadetex</command>) or Portable Document Format (PDF) form (use the command <command>pdfjadetex</command>).</para>
+<para>JadeTeX is architecture and platform independent. If LaTeX is available for your platform, then JadeTeX will be also.</para>
+<sect1><title>Obtaining JadeTeX</title>
+<para>The latest version of JadeTeX may be obtained from
+<filename>http://jadetex.sourceforge.net</filename></para>
 </sect1>
-<sect1><title>Features</title>
-<para>Various extensions supported</para>
+<sect1><title>Dependencies</title>
+<para>Jadetex is dependent upon OpenJade and a reasonably up to date and full featured LaTeX installation. For best results OpenJade 1.3.1 should be used. However, JadeTeX will work fine with older versions (including Jade 1.2.1), although it may be necessary to adjust your <filename>jadetex.cfg</filename> configuration file to supply JadeTeX with any features missing from your version of OpenJade.</para>
+<para>Any recent LaTeX distribution such as TeXlive, fpTeX or teTeX is required. As a guide the following table lists some of the requirements and suggested minimum versions.</para>
+<table id="texdepends" frame="topbot"><title>Dependencies on LaTeX</title>
+<tgroup cols="4" align="left" colsep="0" rowsep="0">
+<colspec colname="c1" colwidth="1*" />
+<colspec colname="c2" colwidth="3*" />
+<thead>
+<row rowsep="1">
+        <entry>Package</entry>
+        <entry>Minimum Required Version</entry>
+</row>
+</thead>
+<tbody>
+<row>
+   <entry ><filename>times</filename></entry>
+   <entry></entry>
+</row>
+<row>
+   <entry ><filename>fontenc</filename></entry>
+   <entry></entry>
+</row>
+<row>
+   <entry ><filename>array</filename></entry>
+   <entry></entry>
+</row>
+<row>
+   <entry ><filename>longtable</filename></entry>
+   <entry></entry>
+</row>
+<row>
+   <entry ><filename>color</filename></entry>
+   <entry></entry>
+</row>
+<row>
+   <entry ><filename>colortbl</filename></entry>
+   <entry></entry>
+</row>
+<row>
+   <entry ><filename>marvosym</filename></entry>
+   <entry></entry>
+</row>
+<row>
+   <entry ><filename>graphicx</filename></entry>
+   <entry>1997/06/09</entry>
+</row>
+<row>
+   <entry ><filename>multicol</filename></entry>
+   <entry></entry>
+</row>
+<row>
+   <entry ><filename>hyperref</filename></entry>
+   <entry>2000/03/01</entry>
+</row>
+<row>
+   <entry ><filename>fancyhdr</filename></entry>
+   <entry></entry>
+</row>
+<row>
+   <entry ><filename>inputenc</filename></entry>
+   <entry>1997/12/20</entry>
+</row>
+<row>
+   <entry ><filename>ulem</filename></entry>
+   <entry></entry>
+</row>
+<row>
+   <entry ><filename>pdfTeX</filename></entry>
+   <entry>0.13d</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
 </sect1>
 <sect1><title>Installation</title>
-<para>See the installation guide</para>
+<para>See the installation guide.</para>
 </sect1>
 <sect1><title>Configuration</title>
-<para>Notes on using jadetex.cfg</para>
+<para>It is possible to customize the behavior of JadeTeX by placing definitions in the file <filename>jadetex.cfg</filename>. This is usually placed in your working directory, but theoretically make be placed anywhere in your TeX path.</para>
+<para>If you are producing PDF files then you may wish to consult the <command>hyperref</command> documentation. Options for customizing the look and feel of the PDF file described in the hyperref documentation should be placed in the <filename>jadetex.cfg</filename>. For example:
+<screen>
+\hypersetup{pdfpagemode=None,  pdfauthor=jadetex team,  colorlinks=false,
+ linkcolor=black,  pdfstartview=FitH}
+\def\Gin@extensions{.pdf,.png,.jpg,.mps,.tif}
+</screen>
+Would cause the PDF document to open without displaying book marks.
+Links would not be highlighted in anyway (if they were, the would be color black).
+The document will be placed in a "fit width" viewing mode.
+Finally, pdfjadetex would prefer image with a pdf extensions over a png extension if none is specified.
+This is useful if you want to give priority to scalable documents for a PDF file, while preferring a bit mapped format for other output types.</para>
+<para>If you have a out of date version of openjade, which does not support the characteristics 
+<screen>
+  "UNREGISTERED::OpenJade//Characteristic::page-two-side?"
+
+  "UNREGISTERED::OpenJade//Characteristic::two-side-start-on-right?"
+</screen>
+and you want to use two sided output then you would have to add the definitions
+<screen>
+\def\PageTwoSide{1}
+\def\TwoSideStartOnRight{1}
+</screen>
+to your <filename>jadetex.cfg</filename> to make up for the deficiency.</para>
 </sect1>
 <sect1><title>Version 3.12</title>
 <formalpara><title>Released January 2002.</title>
@@ -39,11 +134,6 @@ macros into DVI, PostScript or Portable Document Format (PDF) form.</para>
 to be used with openjade 1.3.1. In addition to fixing some bugs it
 also provides enhanced support for the "euro" monetary symbol &euro;.</para>
 </formalpara>
-<para>Installation notes are provided in the install guide
-<filename>index.htm</filename> provided with the release.</para>
-<para>The latest version of jadetex may be obtained from
-<filename>http://jadetex.sourceforge.net</filename></para>
-
 <table id="id1" frame="topbot"><title>Changes for release 3.12</title>
 <tgroup cols="2" align="left" colsep="0" rowsep="0">
 <colspec colname="c1" colwidth="1*" />
@@ -122,7 +212,7 @@ also provides enhanced support for the "euro" monetary symbol &euro;.</para>
 <row>
 	<entry><para>Problem</para></entry>
     <entry><para>The TeX multicol package supports
-	both balanced and unbalanced columns.  However, jadetex 3.11
+	both balanced and unbalanced columns.  However, JadeTeX 3.11
 	didn't call the functions for unbalanced columns correctly.  Since
 	a bug in the handling of %page-balanced-columns?% was fixed in
 	3.11, this is now the common case - so multicolumn documents that
@@ -141,7 +231,7 @@ also provides enhanced support for the "euro" monetary symbol &euro;.</para>
 <thead>
 <row rowsep="1">
 	<entry>Item 4</entry>
-    <entry>Add <command>DESTDIR</command> environment variable to
+    <entry>Add <varname>DESTDIR</varname> environment variable to
       <filename>Makefile</filename></entry>
 </row>
 </thead>
@@ -155,13 +245,13 @@ also provides enhanced support for the "euro" monetary symbol &euro;.</para>
 </row>
 <row>
    <entry><para>Problem</para></entry>
-   <entry><para>Makefile doesn't have DESTDIR environment variable</para></entry>
+   <entry><para>Makefile doesn't have <varname>DESTDIR</varname> environment variable</para></entry>
 </row>
 <row>
    <entry><para>Resolution</para></entry>
    <entry><para>Make makefile more friendly for packagers with
-	introduction of DESTDIR environment variable. This change is
-	transparent to those that don't want to use DESTDIR.</para></entry>
+	introduction of <varname>DESTDIR</varname> environment variable. This change is
+	transparent to those that don't want to use <varname>DESTDIR</varname>.</para></entry>
 </row>
 </tbody>
 </tgroup>
@@ -177,7 +267,7 @@ also provides enhanced support for the "euro" monetary symbol &euro;.</para>
 <tbody>
 <row>
     <entry><para>References</para></entry>
-    <entry><para>Red Hat bugzilla bug 47345</para></entry>
+    <entry><para>Red Hat Bugzilla bug 47345</para></entry>
 </row>
 <row>
    <entry><para>Category</para></entry>
@@ -219,14 +309,14 @@ also provides enhanced support for the "euro" monetary symbol &euro;.</para>
 <row>
    <entry><para>Problem</para></entry>
    <entry><para>Many commonly installed fonts such as Charter and Utopia 
-are not available for use with jadetex</para></entry>
+are not available for use with JadeTeX</para></entry>
 </row>
 <row>
    <entry><para>Resolution</para></entry>
    <entry><para>Added the following fonts: Utopia, ZapfChancery, Fibonacci,
 Funny, Dunhill, Concrete, Charter, Fontpxr, Fontaer, Fontaess, Fontaett, 
 Fontlcmss, Fontlcmtt, Fontlcmvtt, Fontcmbr, Fontcmtl, Fontpxss, Fonttxss,
-Fonttxr. Note that this justs makes the fonts available to jadetex. You must
+Fonttxr. Note that this justs makes the fonts available to JadeTeX. You must
 have them installed already to actually use them in documents</para></entry>
 </row>
 </tbody>
@@ -252,7 +342,7 @@ have them installed already to actually use them in documents</para></entry>
 <row>
     <entry><para>Problem</para></entry>
     <entry><para>Using the reference <command>&amp;euro;</command> does
-not produce any output. Using the unicode character reference produces
+not produce any output. Using the Unicode character reference produces
 a black square unless a Computer Modern font is being used.</para></entry>
 </row>
 <row>
@@ -263,8 +353,8 @@ containing the euro symbol. Some consideration was given to using Adobe's
 freely available euro fonts and the <command>eurosans.sty</command> package.
 However as the adobe fonts cannot be distributed freely this option
 was not chosen. In addition, the <command>marvosym.sty</command> package
-is available in most modern TeX distibutions.</para>
-<para>Additionaly, support was added for the <command>&amp;euro;</command>
+is available in most modern TeX distributions.</para>
+<para>Additionally, support was added for the <command>&amp;euro;</command>
 entity reference.</para></entry>
 </row>
 </tbody>

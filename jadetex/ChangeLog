@@ -1,5 +1,10 @@
+2001-07-19  Sebastian Rahtz  <sebastian.rahtz@computing-services.oxford.ac.uk>
+	* jadetex.dtx: version 3.11
+	* jadetex.dtx: patches for multiple columns from Jean-Marie Kubek
+	<kubek@insa-tlse.fr> 
+
 2001-07-13  Sebastian Rahtz  <sebastian.rahtz@computing-services.oxford.ac.uk>
-	* jadetex.dtx: version 3.9
+	* jadetex.dtx: version 3.10
 	* jadetex.dtx: changed \if#1{qqq} to \ifx#1\@qqq, stupid mistake
 	by me
 

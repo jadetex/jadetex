@@ -9,8 +9,8 @@
 \NeedsTeXFormat{LaTeX2e}[1995/06/01]
 \ProvidesFile{jadetex.ltx}
 \def\JadeTeXMajorVersion{3}
-\def\JadeTeXMinorVersion{10}
-\def\JadeTeXDate{2001/07/13}
+\def\JadeTeXMinorVersion{11}
+\def\JadeTeXDate{2001/07/19}
 \documentclass{minimal}
 \RequirePackage{array}[1995/01/01]
 \RequirePackage{longtable}[1995/01/01]
@@ -23,7 +23,7 @@
   {\typeout{Warning,  at line \the\inputlineno, multicol package not available}}{}%
 }
 \RequirePackage[normalem]{ulem}
-\RequirePackage{fancyhdr}[2000/10/10]% version 2.0
+\RequirePackage{fancyhdr}
 \makeatletter
 \count@\time
 \divide\count@ 60
@@ -790,7 +790,7 @@
   \expandafter\newbox\csname jadeRowSpanBox\ColumnIndex\endcsname
   \expandafter\newdimen\csname jadeRowSpanSpace\ColumnIndex\endcsname
  \fi
- \setbox\JadeRowSpanBox{\ColumnIndex}\vtop\bgroup%
+ \setbox\JadeRowSpanBox{\ColumnIndex}\vtop\bgroup\noindent%
 }
 \def\endJadeRowSpan{%
  \egroup%
@@ -868,9 +868,9 @@
    \ifnum\SavedSpan>1\relax
      \ifnum\col@number>1\relax % in multicols
        \ifnum\PageBalanceColumns>0
-         \end{multicols*}
-       \else
          \end{multicols}
+       \else
+         \end{multicols*}
        \fi
      \fi
    % or delayed open
@@ -878,9 +878,9 @@
      \ifnum\col@number=1 % not in multicols
        \columnsep\PageColumnSep
        \ifnum\PageBalanceColumns>0
-         \begin{multicols*}{\PageNColumns}
-       \else
          \begin{multicols}{\PageNColumns}
+       \else
+         \begin{multicols*}{\PageNColumns}
        \fi
      \fi
    \fi
@@ -897,9 +897,9 @@
  \ifnum\@SavedSpan=\PageNColumns\else
        \columnsep\PageColumnSep
        \ifnum\PageBalanceColumns>0
-         \begin{multicols*}{\PageNColumns}
-       \else
          \begin{multicols}{\PageNColumns}
+       \else
+         \begin{multicols*}{\PageNColumns}
        \fi
      \fi
    \fi
@@ -914,9 +914,9 @@
    \ifnum\@SavedSpan>1\relax
  \ifnum\@SavedSpan=\PageNColumns\else
        \ifnum\PageBalanceColumns>0
-         \end{multicols*}
-       \else
          \end{multicols}
+       \else
+         \end{multicols*}
        \fi
      \fi
    \fi
@@ -1196,9 +1196,9 @@
    \ifnum\PageNColumns>1
      \columnsep\PageColumnSep
     \ifnum\PageBalanceColumns>0
-       \begin{multicols*}{\PageNColumns}
-    \else
        \begin{multicols}{\PageNColumns}
+    \else
+       \begin{multicols*}{\PageNColumns}
     \fi
    \fi
  \fi
@@ -1327,9 +1327,9 @@
  \ifnum\PageNColumns>1\relax
    \ifnum\col@number>1\relax % in multicols
      \ifnum\PageBalanceColumns>0
-       \end{multicols*}
-     \else
        \end{multicols}
+     \else
+       \end{multicols*}
      \fi
    \fi
  \fi
@@ -1844,9 +1844,9 @@
  \def\Hy@endcolorlink{}%
  \ifnum\col@number>1
     \ifnum\PageBalanceColumns>0
-       \end{multicols*}
-    \else
        \end{multicols}
+    \else
+       \end{multicols*}
     \fi
  \fi
  \enddocument}

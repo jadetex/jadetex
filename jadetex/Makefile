@@ -26,7 +26,7 @@ test:
 	openjade -t tex -d ../docbook/print/docbook.dsl test-tables.sgm
 
 distrib:
-	(cd ..; tar zcvf jadetex.tar.gz jadetex/*1 jadetex/*.dtx jadetex/*.ins jadetex/*.sty jadetex/*.fd \
+	(cd ..; tar zcvf jadetex-$N.tar.gz jadetex/*1 jadetex/*.dtx jadetex/*.ins jadetex/*.sty jadetex/*.fd \
 	jadetex/index.* jadetex/doc/install.pdf \
 	jadetex/Makefile jadetex/ChangeLog jadetex/*ini)
 

@@ -10,7 +10,7 @@
                      width="88" height="31" border="0" alt="SourceForge
    Logo"/></a></xsl:template>
    <xsl:variable name="cssFile">http://www.oucs.ox.ac.uk/stylesheets/tei-oucs.css</xsl:variable>
-   <xsl:variable name="feedbackURL">mailto:feedback@oucs.ox.ac.uk</xsl:variable>
+   <xsl:variable name="feedbackURL">mailto:sebastian.rahtz@oucs.ox.ac.uk</xsl:variable>
    <xsl:variable name="feedbackWords">Feedback</xsl:variable>
    <xsl:variable name="homeLabel">Home</xsl:variable>
    <xsl:variable name="homeURL">http://www.oucs.ox.ac.uk/</xsl:variable>

@@ -232,9 +232,8 @@ cd /tmp/config</Screen>
 	<Screen>tex -ini -progname=latex latex.ini</Screen>
 
 	This will produce a file <Filespec>latex.fmt</Filespec>
-	in the same directory. Rename this to
-	<Filespec>latex.fmt</Filespec>,
-	then become root and put it in
+	in the same directory.
+	Become root and put it in
 	<Filespec>$TEXMFMAIN/web2c</Filespec>. This
 	is where all the format files are kept. (You can delete the other copied
 	files from <Filespec>config</Filespec> afterwards.)

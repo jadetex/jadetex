@@ -10,9 +10,10 @@ pdfjadetex.fmt: basic
 	pdftex -ini -progname=pdfjadetex "&pdflatex" pdfjadetex.ini
 
 install: jadetex.fmt pdfjadetex.fmt
-	(TT=`kpsewhich -expand-var '$$TEXMFMAIN'`;cp pdfjadetex.fmt $$TT/web2c)
-	(TT=`kpsewhich -expand-var '$$TEXMFMAIN'`;cp jadetex.fmt $$TT/web2c)
-	-(TT=`kpsewhich -expand-var '$$TEXMFMAIN'`;\
+	(TT=$$DESTDIR/`kpsewhich -expand-var '$$TEXMFMAIN'`; \
+	mkdir -p $$TT/web2c; \
+	cp pdfjadetex.fmt $$TT/web2c; \
+	cp jadetex.fmt $$TT/web2c; \
 	mkdir -p $$TT/tex/jadetex ; \
 	cp dsssl.def jadetex.ltx $$TT/tex/jadetex)
 

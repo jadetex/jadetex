@@ -786,7 +786,7 @@
      \kern -\PositionPointX
    \fi
    \ifnum\Layer>0%
-% Graphic drawn at layer > 0 overwrites surrouning text
+% Graphic drawn at layer > 0 overwrites surrounding text
      \jadeGraphicWidth=\wd\jadeGraphic
      \raisebox{-\PositionPointY}[\z@][\z@]{\box\jadeGraphic}
      \kern\PositionPointX\kern-\jadeGraphicWidth
@@ -802,7 +802,7 @@
   \or%
     \DisplayNIC
     \@@par%
-    \@tempdima\textwidth
+    \@tempdima\columnwidth
     \nointerlineskip
     \ifdim\EndIndent>\z@
       \advance\@tempdima by-\EndIndent

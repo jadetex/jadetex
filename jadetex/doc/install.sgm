@@ -1,6 +1,7 @@
 <!DOCTYPE Article PUBLIC "-//OASIS//DTD DocBook V3.1//EN"
 [ <!ENTITY last-update "2002-01-07 11:34 GMT">
 ]>
+<!-- ISC: This has been obsoleted by index.xml -->
 <Article>
     <ArtHeader>
       <Title>Installing JadeTeX</Title>

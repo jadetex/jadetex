@@ -1,8 +1,21 @@
-install.pdf: install.sgm
-	openjade -t tex -V tex-backend -d docbook.dsl install.sgm
-	pdfjadetex install.tex
-	pdfjadetex install.tex
-	pdfjadetex install.tex
+MAX_TEX_RECURSION=4
+JADE=openjade
+JADETEX=jadetex
+PDFJADETEX=pdfjadetex
+XMLDECL=/usr/share/sgml/xml.dcl
+
+%.tex: %.xml %.dsl
+	$(JADE) -v -t tex -V tex-backend -d $*.dsl#print $(XMLDECL) $*.xml
+
+%.pdf: %.tex
+	$(PDFJADETEX) $<
+	if ! cmp $(shell basename $< .tex).aux prior.aux 2>/dev/null && \
+		expr $(MAKELEVEL) '<' $(MAX_TEX_RECURSION); then \
+		cp -pf $(shell basename $< .tex).aux prior.aux ; \
+		rm -f $@ ; \
+		$(MAKE) $@ ; \
+	fi
+	rm -f prior.aux
 
 clean:
-	-rm -f *.out *.aux *.log *.dvi
+	-rm -f *.out *.aux *.log *.dvi *.tex
